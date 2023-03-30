@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# from django.contrib import admin
+from django.urls import path, include
 from django.contrib import admin
-from django.urls import path
 # from .views import current_datetime
-from .views import *
+# from friender.arrangements.views import current_datetime, greeting
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('time_now/', current_datetime),
-    path('greeting/', greeting),
+    path('arrangements/', include("arrangements.urls"))
 ]
